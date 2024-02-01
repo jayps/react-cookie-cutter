@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import LoginPage from "./pages/login-page";
 import Register from "./pages/register-page";
+import AuthContextProvider from "./contexts/auth-context";
+import Dashboard from "./pages/dashboard";
 
 const App: React.FC = () => {
     const router = createBrowserRouter([
@@ -17,10 +19,16 @@ const App: React.FC = () => {
             path: "/register",
             element: <Register/>,
         },
+        {
+            path: "/dashboard",
+            element: <Dashboard/>,
+        },
     ]);
 
     return (
-        <RouterProvider router={router}/>
+        <AuthContextProvider>
+            <RouterProvider router={router}/>
+        </AuthContextProvider>
     );
 }
 
