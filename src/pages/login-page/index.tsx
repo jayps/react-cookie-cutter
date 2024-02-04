@@ -27,9 +27,6 @@ const LoginPage: React.FC = () => {
     const [error, setError] = React.useState('');
     const {isLoggedIn, currentUser, dispatch} = React.useContext(AuthContext);
 
-    React.useEffect(() => {
-        console.log('isLoggedIn', isLoggedIn);
-    });
     const onSubmit: SubmitHandler<LoginInputs> = (data) => submitLogin(data.email, data.password);
 
     const submitLogin = (email: string, password: string) => {
@@ -45,10 +42,9 @@ const LoginPage: React.FC = () => {
             setLoading(false);
             if (response.ok) {
                 response.json().then((responseData: APIResponse<AuthResponse>) => {
-                   console.log('Logged in', responseData);
                    dispatch({type: 'SET_LOGGED_IN', payload: true});
                    const user = getUserFromJwtData(parseJwt(responseData.data.access));
-                   console.log('User', user);
+                   localStorage.setItem('token', responseData.data.access);
                    dispatch({type: 'SET_CURRENT_USER', payload: user});
                    navigate('/dashboard');
                 });

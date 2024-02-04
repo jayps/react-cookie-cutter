@@ -13,7 +13,6 @@ export const AuthReducer = (state: AuthState, action: AuthActions) => {
                 ...state, isLoggedIn: action.payload
             }
         case 'SET_CURRENT_USER':
-            console.log('Setting user...', action.payload);
             return {
                 ...state, currentUser: action.payload
             }
