@@ -11,6 +11,8 @@ import Dashboard from "./pages/dashboard";
 import {getUserFromJwtData, parseJwt} from "./utils/jwt";
 import {User} from "./types/user/user";
 import Loader from "./components/loader";
+import UsersPage from "./pages/users";
+import Logout from "./pages/logout";
 
 const RequireAuth: React.FC<PropsWithChildren> = ({children}) => {
     const {isLoggedIn, currentUser, dispatch} = React.useContext(AuthContext);
@@ -47,6 +49,18 @@ const App: React.FC = () => {
             path: "/dashboard",
             element: <RequireAuth>
                 <Dashboard/>
+            </RequireAuth>,
+        },
+        {
+            path: "/users",
+            element: <RequireAuth>
+                <UsersPage/>
+            </RequireAuth>,
+        },
+        {
+            path: "/logout",
+            element: <RequireAuth>
+                <Logout/>
             </RequireAuth>,
         },
     ]);

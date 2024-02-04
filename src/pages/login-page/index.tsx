@@ -64,9 +64,9 @@ const LoginPage: React.FC = () => {
     return (
         <BasePageContainer>
             <div className="flex flex-col justify-center min-h-svh">
-                <div className="card">
+                <div className="card m:w-96 mx-auto">
                     <h1 className="h1">
-                        Log in {isLoggedIn ? 'true' : 'false'} -- User: {currentUser ? currentUser.firstName : 'n/a'}
+                        Log in
                     </h1>
                     <hr className="my-4"/>
                     <form onSubmit={handleSubmit(onSubmit)}>
