@@ -1,4 +1,4 @@
-import {User} from "../user/user";
+import {User} from "../../types/user/user";
 
 export type AuthActions =
     | { type: 'SET_LOGGED_IN'; payload: boolean }

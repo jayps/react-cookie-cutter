@@ -1,5 +1,5 @@
-import {AuthActions} from "../types/auth/auth-actions";
-import {User} from "../types/user/user";
+import {AuthActions} from "./auth-actions";
+import {User} from "../../types/user/user";
 
 export interface AuthState {
     isLoggedIn: boolean;

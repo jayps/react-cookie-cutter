@@ -1,6 +1,6 @@
 import React, {PropsWithChildren} from "react";
-import {AuthReducer, AuthState} from "../reducers/auth-reducer";
-import {AuthActions} from "../types/auth/auth-actions";
+import {AuthReducer, AuthState} from "./auth-reducer";
+import {AuthActions} from "./auth-actions";
 
 // TODO: Add type for User
 // TODO: extend AuthState to have token and currentUser
