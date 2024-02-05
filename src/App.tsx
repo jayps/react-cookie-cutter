@@ -6,13 +6,13 @@ import {
 
 import LoginPage from "./pages/login-page";
 import Register from "./pages/register-page";
-import AuthContextProvider, {AuthContext} from "./contexts/auth-context";
 import Dashboard from "./pages/dashboard";
 import {getUserFromJwtData, parseJwt} from "./utils/jwt";
 import {User} from "./types/user/user";
 import Loader from "./components/loader";
 import UsersPage from "./pages/users";
 import Logout from "./pages/logout";
+import {AuthContext} from "./store/auth/auth-context";
 
 const RequireAuth: React.FC<PropsWithChildren> = ({children}) => {
     const {isLoggedIn, currentUser, dispatch} = React.useContext(AuthContext);

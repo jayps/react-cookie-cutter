@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import {AuthContext} from "../../contexts/auth-context";
 import {Navigate} from "react-router-dom";
+import {AuthContext} from "../../store/auth/auth-context";
 
 const Logout = () => {
     const {dispatch} = useContext(AuthContext);

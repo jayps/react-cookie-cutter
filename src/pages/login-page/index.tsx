@@ -5,10 +5,10 @@ import FormInput from "../../components/form-input";
 import {Link, useNavigate} from "react-router-dom";
 import {API_URL} from "../../constants";
 import Loader from "../../components/loader";
-import {AuthContext} from "../../contexts/auth-context";
 import {APIResponse} from "../../types/response";
 import {AuthResponse} from "../../types/auth/auth-response";
 import {getUserFromJwtData, parseJwt} from "../../utils/jwt";
+import {AuthContext} from "../../store/auth/auth-context";
 
 type LoginInputs = {
     email: string

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import BasePageContainer from "../../components/base-page-container";
-import {AuthContext} from "../../contexts/auth-context";
 import AuthenticatedPageContainer from "../../components/authenticated-page-container";
+import {AuthContext} from "../../store/auth/auth-context";
 
 const DashboardPage: React.FC = () => {
     const {currentUser} = useContext(AuthContext);
